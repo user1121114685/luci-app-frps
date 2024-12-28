@@ -22,8 +22,8 @@ local dsp = require "luci.dispatcher"
 
 			var frpsStatusElm = document.getElementById('frps_status');
 			frpsStatusElm.innerHTML = data.running
-				? '<%:Running%>'
-				: '<%:Not Running%>';
+				? '<b><font color=green><%:Frps 正在运行%></font></b>'
+				: '<b><font color=red><%:Frps 未运行%></font></b>';
 		}
 	);
 //]]></script>
