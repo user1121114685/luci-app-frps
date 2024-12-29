@@ -6,7 +6,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-frps
-PKG_VERSION:=0.0.2
+PKG_VERSION:=0.0.3
 PKG_RELEASE:=1
 
 PKG_LICENSE:=MIT
@@ -29,8 +29,8 @@ if [ -z "$${IPKG_INSTROOT}" ]; then
 	( . /etc/uci-defaults/40_luci-frps ) && rm -f /etc/uci-defaults/40_luci-frps
 fi
 
-chmod 755 "$${IPKG_INSTROOT}/etc/init.d/frps" >/dev/null 2>&1
-ln -sf "../init.d/frps" \
+chmod 755 "$${IPKG_INSTROOT}/etc/init.d/luci_frps" >/dev/null 2>&1
+ln -sf "../init.d/luci_frps" \
 	"$${IPKG_INSTROOT}/etc/rc.d/S99frps" >/dev/null 2>&1
 exit 0
 endef
